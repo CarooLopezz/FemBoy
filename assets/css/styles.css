@@ -1,0 +1,89 @@
+/*Reset*/
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: 0px;
+}
+
+/*Inicio*/
+.fondo {
+  background-color: #de3c4b;
+}
+
+.contenedor {
+  position: relative;
+  display: inline-block;
+  height: 478px;
+  width: 1300px;
+}
+
+.titulo_inicio {
+  position: absolute;
+  font-size: 98px;
+  font-family: serif;
+  top: 10px;
+  color: #F21B48;
+  left: 460px;
+  display: inline;
+}
+
+.titulo_inicio1 {
+  position: absolute;
+  left: 650px;
+  top: 115px;
+  font-size: 98px;
+  font-family: serif;
+  top: 10px;
+  color: black;
+  display: inline;
+}
+
+.nav {
+  display: inline-block;
+  display: flex;
+  font-size: 40px;
+  top: 145px;
+}
+.nav .nav_image {
+  width: 1350px;
+  height: 88px;
+  bottom: 107px;
+  position: relative;
+  z-index: 15px;
+}
+.nav .nav_image .textnav {
+  color: yellow !important;
+  text-decoration: none;
+  top: 44%;
+  left: 20%;
+  align-content: space-around;
+}
+.nav .nav_image .textnav:hover {
+  color: black;
+}
+
+.tarjeta_oferta {
+  display: flex;
+  justify-content: space-around;
+}
+.tarjeta_oferta .card {
+  overflow: hidden;
+}
+.tarjeta_oferta .card:hover {
+  transition: 0, 5s;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.tarjeta_oferta .card:hover img {
+  transform: scale(1.2);
+}
+.carrito {
+  margin-top: 15px;
+  color: white;
+  background-color: black;
+  display: block;
+  width: 123px;
+  height: 34px;
+  text-decoration: none;
+  border-radius: 5px;
+}
