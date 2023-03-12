@@ -1,42 +1,32 @@
 //--------------------- poner todos los productos en un objeto class constructor----------------------//
-unidad = 0;
-class listaRopa{
 
-    constructor(buzoMarron, buzoGris, buzoRosado){
+class Prenda { // armo modelo único
+    constructor(nombre, talle, color, precio) {
+        this.nombre = nombre;
+        this.talle = talle;
+        this.color = color;
+        this.precio = precio;
+    }
+}
 
-    this.buzoMarron = parseInt(buzoMarron);
-    this.buzoGris= parseInt(buzoGris);
-    this.buzoRosado= parseInt(buzoRosado);
-    this.vendido = false;
-}
-    sumaIva(){
-    this.precio = this.precio * 1.21;
-}
-    vender(){
-    this.vendido = true;
-}
-}
-listaRopa.sumaIva();
-listaRopa.vender();
 //---------------------guardar los precios de la ropa en un arrays------------------------------------//
 
-const listasRopa = [
-    new listaRopa (15750,17230,13230),
-    new listaRopa (14000,16150,11640),
+const prendas = [
+    new Prenda("Bruzo ", "L", "marrón", 14000),
+    new Prenda("Buzo", "M", "gris", 16150), 
+    new Prenda ("Buzo", "X", "rosado",11640)
 ]
+prendas.push("En oferta")
 
-console.log(listaRopa);
+console.log(prendas.length)
 
+console.log(prendas);
 
 
 //--------------------- pedir al usuario su nombre y preguntar si desea comprar ---------------------//
 
-let nombre = prompt("Ingrese su nombre , por favor");
-
-function saludarConNombre(nombre) {
-    alert('Buenos días, ' + nombre);
-}
-saludarConNombre(nombre)
+unidad = 0;
+colorElegido = 0;
 
 let elegirProducto = prompt("¿Desea comprar?");
 
@@ -50,15 +40,20 @@ if (elegirProducto === "si" || elegirProducto === "Si") {
 
         switch (producto) {
             case "1":
-                alert("El precio es de $ " + precioBuzoMarron);
+                alert("El precio es de $ " + Prenda);
                 totalProductos = prompt("¿Desea más de una unidad: \n1- Si. \n2- No.");
                 if (totalProductos != "No" && totalProductos != "no") {
                     let unidad = parseInt(prompt("¿Cuánto unidades? Se tiene como límite 5 unidades de cada producto"));
                     alert(unidad)
-                    precioBuzoMarron = (unidad * precioBuzoMarron);
-                    alert("Su precio total sería " + precioBuzoMarron);
+                    Prenda = (unidad * Prenda);
+                    alert("Su precio total sería " + Prenda);
                     finalizar = "";
                     finalizar = alert("Gracias por confiar!");
+
+// -------------------- reduce para sumar en caso de que quiera más de una unidad------------------------------//
+
+                const total = Prenda.reduce((acumulador, elemento) => acumulador + elemento, 0)
+                console.log(total) 
 
                     break;
 
@@ -70,13 +65,13 @@ if (elegirProducto === "si" || elegirProducto === "Si") {
 
 
             case "2":
-                alert("El precio es de $ " + precioBuzoGris);
+                alert("El precio es de $ " + Prenda);
                 totalProductos = prompt("¿Desea más de una unidad: \n1- Si. \n2- No.");
                 if (totalProductos != "No" && totalProductos != "no") {
                     let unidad = parseInt(prompt("¿Cuánto unidades? Se tiene como límite 5 unidades de cada producto"));
                     alert(unidad)
-                    precioBuzoGris = (unidad * precioBuzoGris);
-                    alert("Su precio total sería " + precioBuzoGris);
+                    Prenda = (unidad * Prenda);
+                    alert("Su precio total sería " + Prenda);
                     finalizar = "";
                     finalizar = alert("Gracias por confiar!");
 
@@ -89,13 +84,13 @@ if (elegirProducto === "si" || elegirProducto === "Si") {
 
 
             case "3":
-                alert("El precio es de $ " + precioBuzoRosado);
+                alert("El precio es de $ " + Prenda);
                 totalProductos = prompt("¿Desea más de una unidad: \n1- Si. \n2- No.");
                 if (totalProductos != "No" && totalProductos != "no") {
                     let unidad = parseInt(prompt("¿Cuánto unidades? Se tiene como límite 5 unidades de cada producto"));
                     alert(unidad)
-                    precioBuzoRosado = (unidad * precioBuzoRosado);
-                    alert("Su precio total sería " + precioBuzoRosado);
+                    Prenda = (unidad * Prenda);
+                    alert("Su precio total sería " + Prenda);
                     finalizar = "";
                     finalizar = alert("Gracias por confiar!");
                     break;
