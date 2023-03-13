@@ -40,19 +40,19 @@ if (elegirProducto === "si" || elegirProducto === "Si") {
 
         switch (producto) {
             case "1":
-                alert("El precio es de $ " + Prenda);
+                alert("El precio es de $ " + prendas[0]);
                 totalProductos = prompt("¿Desea más de una unidad: \n1- Si. \n2- No.");
                 if (totalProductos != "No" && totalProductos != "no") {
                     let unidad = parseInt(prompt("¿Cuánto unidades? Se tiene como límite 5 unidades de cada producto"));
                     alert(unidad)
-                    Prenda = (unidad * Prenda);
-                    alert("Su precio total sería " + Prenda);
+                    prendas[0] = (unidad * prendas[0]);
+                    alert("Su precio total sería " + prendas[0]);
                     finalizar = "";
                     finalizar = alert("Gracias por confiar!");
 
 // -------------------- reduce para sumar en caso de que quiera más de una unidad------------------------------//
 
-                const total = Prenda.reduce((acumulador, elemento) => acumulador + elemento, 0)
+                const total = prendas.reduce((acumulador, elemento) => acumulador + elemento, 0)
                 console.log(total) 
 
                     break;
@@ -65,13 +65,13 @@ if (elegirProducto === "si" || elegirProducto === "Si") {
 
 
             case "2":
-                alert("El precio es de $ " + Prenda);
+                alert("El precio es de $ " + prendas[1]);
                 totalProductos = prompt("¿Desea más de una unidad: \n1- Si. \n2- No.");
                 if (totalProductos != "No" && totalProductos != "no") {
                     let unidad = parseInt(prompt("¿Cuánto unidades? Se tiene como límite 5 unidades de cada producto"));
                     alert(unidad)
-                    Prenda = (unidad * Prenda);
-                    alert("Su precio total sería " + Prenda);
+                    prendas[1] = (unidad * prendas[1]);
+                    alert("Su precio total sería " + prendas[1]);
                     finalizar = "";
                     finalizar = alert("Gracias por confiar!");
 
@@ -84,13 +84,13 @@ if (elegirProducto === "si" || elegirProducto === "Si") {
 
 
             case "3":
-                alert("El precio es de $ " + Prenda);
+                alert("El precio es de $ " + prendas[2]);
                 totalProductos = prompt("¿Desea más de una unidad: \n1- Si. \n2- No.");
                 if (totalProductos != "No" && totalProductos != "no") {
                     let unidad = parseInt(prompt("¿Cuánto unidades? Se tiene como límite 5 unidades de cada producto"));
                     alert(unidad)
-                    Prenda = (unidad * Prenda);
-                    alert("Su precio total sería " + Prenda);
+                    prendas[2] = (unidad * prendas[2]);
+                    alert("Su precio total sería " + prendas[2]);
                     finalizar = "";
                     finalizar = alert("Gracias por confiar!");
                     break;
