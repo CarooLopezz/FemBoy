@@ -1,8 +1,7 @@
 //--------------------- poner todos los productos en un objeto class constructor----------------------//
 
 class Prenda { // armo modelo único
-    constructor(id, nombre, talle, color, precio) {
-        this.id = id;
+    constructor( nombre, talle, color, precio) {
         this.nombre = nombre;
         this.talle = talle;
         this.color = color;
@@ -13,21 +12,21 @@ class Prenda { // armo modelo único
 //---------------------guardar los precios de la ropa en un arrays------------------------------------//
 
 const prendas = [
-    new Prenda(1,"Bruzo ", "L", "marrón", 14000),
+    new Prenda(1,"Buzo ", "L", "marrón", 14000),
     new Prenda(2,"Buzo", "M", "gris", 16150), 
     new Prenda (3,"Buzo", "X", "rosado",11640)
 ]
-    prendas.push("En oferta")
 
-    console.log(prendas.length)
 
     console.log(prendas);
+    carrito = [];
 
     // carrito de compra
 
 
 //--------------------- pedir al usuario su nombre y preguntar si desea comprar ---------------------//
-unidad= 0; 
+let unidad = 0;
+
 let elegirProducto = prompt("¿Desea comprar?");
 
 
@@ -43,25 +42,27 @@ if (elegirProducto === "si" || elegirProducto === "Si") {
     }else {
         const productoElegido = prendas.find( p => p.id === producto);
         carrito.push(productoElegido);
-        const unidad = parseInt(prompt("¿Cuántos quiere?"));
-        alert(unidad)
-        productoElegido.unidad = unidad;    
-        productoElegido.precio = productoElegido.precio * unidad
-        alert(productoElegido.precio);
+        let unidad = parseInt(prompt("¿Cuántos quiere?"));
+        unidad = (productoElegido * unidad);
+        console.log(unidad) 
+        alert("Su precio total sería " + unidad);
+        gitfinalizar = "";
+        finalizar = alert("Gracias por confiar!");
         
-    carrito.push(productoElegido);
+        
+        
     }
     const continuarCompra = confirm("¿desea seguir comprando?")
-    function calcularTotal(){
-        const total = carrito.reduce( (acc,el) => acc += el.precio)
     if (continuarCompra){
-        mostrarProductos();
+    
+        const Prenda= prendas.map( (el) =>  el.precio)
+    console.log(Prenda);
+
     }else{
-        calcularTotal();
         alert("Gracias por visitarnos");
     }
 
     }
-}
+
 
 
