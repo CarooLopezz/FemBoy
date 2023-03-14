@@ -28,8 +28,11 @@ const prendas = [
     const carrito =[];
 
 //--------------------- pedir al usuario su nombre y preguntar si desea comprar ---------------------//
-unidad= 0;
-function mostrarProductos(){
+unidad= 0; 
+let elegirProducto = prompt("¿Desea comprar?");
+
+if (elegirProducto === "si" || elegirProducto === "Si") {
+    function mostrarProductos(){
     let producto = parseInt(prompt("Elige un producto, ingrese el número: \n1- Buzo marron. \n2 - Buzo gris. \n3 - Buzo rosado. \n4- Presiona N para abandonar."));
     console.log(producto);
 
@@ -60,3 +63,4 @@ function calcularTotal(){
     const total = carrito.reduce( (acc,el) => acc += el.precio)
 }
 
+}
