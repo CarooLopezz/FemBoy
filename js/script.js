@@ -1,7 +1,8 @@
 //--------------------- poner todos los productos en un objeto class constructor----------------------//
 
 class Prenda { // armo modelo único
-    constructor(nombre, talle, color, precio) {
+    constructor(id, nombre, talle, color, precio) {
+        this.id = id;
         this.nombre = nombre;
         this.talle = talle;
         this.color = color;
@@ -12,117 +13,50 @@ class Prenda { // armo modelo único
 //---------------------guardar los precios de la ropa en un arrays------------------------------------//
 
 const prendas = [
-    new Prenda("Bruzo ", "L", "marrón", 14000),
-    new Prenda("Buzo", "M", "gris", 16150), 
-    new Prenda ("Buzo", "X", "rosado",11640)
+    new Prenda(1,"Bruzo ", "L", "marrón", 14000),
+    new Prenda(2,"Buzo", "M", "gris", 16150), 
+    new Prenda (3,"Buzo", "X", "rosado",11640)
 ]
-prendas.push("En oferta")
+    prendas.push("En oferta")
 
-console.log(prendas.length)
+    console.log(prendas.length)
 
-console.log(prendas);
+    console.log(prendas);
 
+    // carrito de compra
+
+    const carrito =[];
 
 //--------------------- pedir al usuario su nombre y preguntar si desea comprar ---------------------//
+unidad= 0;
+function mostrarProductos(){
+    let producto = parseInt(prompt("Elige un producto, ingrese el número: \n1- Buzo marron. \n2 - Buzo gris. \n3 - Buzo rosado. \n4- Presiona N para abandonar."));
+    console.log(producto);
 
-unidad = 0;
-colorElegido = 0;
+    if(producto > 3 || producto < 1){
+        alert("ingrese un número válido");
+        mostrarProductos();
+    }else {
+        const productoElegido = prendas.find( p => p.id === producto);
+        carrito.push(productoElegido);
+        const cantidad = parseInt(prompt("¿Cuántos quiere?"));
+        productoElegido.cantidad = cantidad;
 
-let elegirProducto = prompt("¿Desea comprar?");
+        productoElegido.precio = productoElegido.precio * unidad
 
-if (elegirProducto === "si" || elegirProducto === "Si") {
+        console.log(productoElegido);
 
-    let producto = prompt("Elige un producto: \n1- Buzo marron. \n2 - Buzo gris. \n3 - Buzo rosado. \n4- Presiona N para abandonar.");
-
-    //-----preguntar al usuario qué desea comprar y sumar otra unidad en que caso de que lo desee---------//
-
-    while (elegirProducto != "N" && elegirProducto != "n") {
-
-        switch (producto) {
-            case "1":
-                alert("El precio es de $ " + prendas[0]);
-                totalProductos = prompt("¿Desea más de una unidad: \n1- Si. \n2- No.");
-                if (totalProductos != "No" && totalProductos != "no") {
-                    let unidad = parseInt(prompt("¿Cuánto unidades? Se tiene como límite 5 unidades de cada producto"));
-                    alert(unidad)
-                    prendas[0] = (unidad * prendas[0]);
-                    alert("Su precio total sería " + prendas[0]);
-                    finalizar = "";
-                    finalizar = alert("Gracias por confiar!");
-
-// -------------------- reduce para sumar en caso de que quiera más de una unidad------------------------------//
-
-                const total = prendas.reduce((acumulador, elemento) => acumulador + elemento, 0)
-                console.log(total) 
-
-                    break;
-
-                } else {
-
-                    alert("Gracias por visitarnos");
-                }
-                break;
-
-
-            case "2":
-                alert("El precio es de $ " + prendas[1]);
-                totalProductos = prompt("¿Desea más de una unidad: \n1- Si. \n2- No.");
-                if (totalProductos != "No" && totalProductos != "no") {
-                    let unidad = parseInt(prompt("¿Cuánto unidades? Se tiene como límite 5 unidades de cada producto"));
-                    alert(unidad)
-                    prendas[1] = (unidad * prendas[1]);
-                    alert("Su precio total sería " + prendas[1]);
-                    finalizar = "";
-                    finalizar = alert("Gracias por confiar!");
-
-                    break;
-                } else {
-
-                    alert("Gracias por visitarnos");
-                }
-                break;
-
-
-            case "3":
-                alert("El precio es de $ " + prendas[2]);
-                totalProductos = prompt("¿Desea más de una unidad: \n1- Si. \n2- No.");
-                if (totalProductos != "No" && totalProductos != "no") {
-                    let unidad = parseInt(prompt("¿Cuánto unidades? Se tiene como límite 5 unidades de cada producto"));
-                    alert(unidad)
-                    prendas[2] = (unidad * prendas[2]);
-                    alert("Su precio total sería " + prendas[2]);
-                    finalizar = "";
-                    finalizar = alert("Gracias por confiar!");
-                    break;
-                } else {
-
-                    alert("Gracias por visitarnos");
-                }
-                break;
-
-
-            default:
-                alert("Gracias por el tiempo. Te esperamos");
-                break;
-
-        }
-    
-    
-    producto = prompt("Elige un producto: \n1- Buzo marron. \n2 - Buzo gris. \n3 - Buzo rosado. \n4- Presiona N para abandonar.");
+        carrito.push(productoElegido);
     }
-} else {
-    alert("Adiós, gracias por tu tiempo!");
+    const continuarCompra = confirm("¿desea seguir comprando?")
+
+    if (continuarCompra){
+        mostrarProductos();
+    }else{
+        calcularTotal();
+    }
 }
-//----------------------------- pedir al usuario el método de pago-----------------------------------------//
-
-let elegirIngreso = prompt("Los métodos de pago: n1\- Tarjeta de crédito. n2\-Tarjeta de débito n3\-Mercado Pago. n4\-X Para cancelar el pago")
-
-while (elegirIngreso != "x" && elegirIngreso!= "X") {
-
-    switch (elegirIngreso) {
-        case "1": alert( "Elegió +  " + elegirIngreso)
-    listaRopa.push(elegirIngreso);
-
-    console.log(elegirIngreso)
-} 
+function calcularTotal(){
+    const total = carrito.reduce( (acc,el) => acc += el.precio)
 }
+
