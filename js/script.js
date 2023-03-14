@@ -25,42 +25,43 @@ const prendas = [
 
     // carrito de compra
 
-    const carrito =[];
 
 //--------------------- pedir al usuario su nombre y preguntar si desea comprar ---------------------//
 unidad= 0; 
 let elegirProducto = prompt("¿Desea comprar?");
 
+
 if (elegirProducto === "si" || elegirProducto === "Si") {
-    function mostrarProductos(){
+    
     let producto = parseInt(prompt("Elige un producto, ingrese el número: \n1- Buzo marron. \n2 - Buzo gris. \n3 - Buzo rosado. \n4- Presiona N para abandonar."));
-    console.log(producto);
+
+    alert(producto);
 
     if(producto > 3 || producto < 1){
         alert("ingrese un número válido");
-        mostrarProductos();
+        
     }else {
         const productoElegido = prendas.find( p => p.id === producto);
         carrito.push(productoElegido);
-        const cantidad = parseInt(prompt("¿Cuántos quiere?"));
-        productoElegido.cantidad = cantidad;
-
+        const unidad = parseInt(prompt("¿Cuántos quiere?"));
+        alert(unidad)
+        productoElegido.unidad = unidad;    
         productoElegido.precio = productoElegido.precio * unidad
-
-        console.log(productoElegido);
-
-        carrito.push(productoElegido);
+        alert(productoElegido.precio);
+        
+    carrito.push(productoElegido);
     }
     const continuarCompra = confirm("¿desea seguir comprando?")
-
+    function calcularTotal(){
+        const total = carrito.reduce( (acc,el) => acc += el.precio)
     if (continuarCompra){
         mostrarProductos();
     }else{
         calcularTotal();
+        alert("Gracias por visitarnos");
+    }
+
     }
 }
-function calcularTotal(){
-    const total = carrito.reduce( (acc,el) => acc += el.precio)
-}
 
-}
+
