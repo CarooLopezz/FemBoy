@@ -1,7 +1,8 @@
 //--------------------- todos los elementos del DOM que voy a necesitar------------------------------//
 const btnCard = document.querySelectorAll(".card");
 const btncarrito = document.querySelectorAll("#carrito")
-modal = new bootstrap.Modal("#carrito");
+let modal = document.getElementById("modal");
+
 
 
 
@@ -27,6 +28,12 @@ const prendas = [
 ];
 
 console.log(prendas);
+//-------------- --para inicar el modal ---------------------------------------------------------------//
+const myModalEl = document.getElementById('myModal')
+myModalEl.addEventListener('show.bs.modal', event => {
+  
+
+
 //------------cuando el usuario desee hacer click en el boton de carrito(conectar js con html)---------//
 
 document.getElementById("carrito").addEventListener("click", hacerPregunta);
@@ -78,7 +85,7 @@ if (elegirProducto === "si" || elegirProducto === "Si") {
 }
 
 
-
+})
 
 
 modal(hidden.bs.modal);
