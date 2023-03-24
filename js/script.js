@@ -30,7 +30,7 @@ const prendas = [
 console.log(prendas);
 //-------------- --para inicar el modal ---------------------------------------------------------------//
 const myModalEl = document.getElementById('myModal')
-myModalEl.addEventListener('show.bs.modal', event => {
+myModalEl.addEventListener('show.bs.modal',() => {
   
 
 
