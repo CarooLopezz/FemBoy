@@ -27,6 +27,8 @@
     </nav>
     </header>
     <main>
+        <div class="row" id="contenedorPrendas"></div>
+
         <h2 class=" justify center">OFERTAS IMPERDIBLES! </h2>
     <section class="tarjeta_oferta">
         <div class="img-fluid card" style="width: 18rem;">
@@ -63,10 +65,16 @@
                 <h5 class="card-title">Remera blanca</h5>
                 <span>$</span><span style="text-decoration:line-through">8.230</span>
                 <a href="#" class="btn btn-primary">7.050</a>
-                <button id="carrito4" href="#" class="btn btn-primary">Añadir a carrito</button>>
+                <button id="carrito4" href="#" class="btn btn-primary">Añadir a carrito</button>
             </div>
         </div>
         </section>
+        <h2>Carrito de Compras:</h2>
+        <button class="btn btn-primary" id="verCarrito">Ver Carrito</button>
+        <button class="btn btn-primary" id="vaciarCarrito">Vaciar Carrito</button>
+        
+        <h3>Total de la compra: <span id="totalCompra">0</span></h3>
+        <div class="row py-3" id="contenedorCarrito"></div>
     </main>
 
     
