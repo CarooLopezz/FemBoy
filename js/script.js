@@ -1,42 +1,40 @@
+//--------------------- creo las clavas para el localstorage----------------------------------------//
+localStorage.setItem(1, "Buzo ", "L", "marrón", 14000);
+localStorage.setItem(2, "Buzo", "M", "gris", 16150);
+sessionStorage.setItem(3, "Buzo", "X", "rosado", 11640);
+sessionStorage.setItem(4, "Remera", "S", "blanca", 7050);
+
+
 //--------------------- todos los elementos del DOM que voy a necesitar------------------------------//
-const btnCard = document.querySelectorAll(".card");
-const btncarrito = document.querySelectorAll("#carrito")
-let modal = document.getElementById("modal");
+const btncarrito1 = document.getElementById("carrito1");
+const btncarrito2 = document.getElementById("carrito2");
+const btncarrito3 = document.getElementById("carrito3");
+const btncarrito4 = document.getElementById("carrito4");
 
-
-
-
-
-//--------------------- poner todos los productos en un objeto class constructor----------------------//
-
-class Prenda { // armo modelo único
-    constructor(id, nombre, talle, color, precio) {
-        this.id = id;
-        this.nombre = nombre;
-        this.talle = talle;
-        this.color = color;
-        this.precio = precio;
-    }
+//-------------- --para iniciar el carrito ---------------------------------------------------------------//
+btncarrito.onclick=(evento) => {
+    
+    console.log('Se agregó exitosamente')
 }
 
-//---------------------guardar los precios de la ropa en un arrays------------------------------------//
+//---------------------------guardar en el localstorage el DOM-------------------------------------------//
+btncarrito.addEventListener('click',()=>{
+    localStorage.setItem("buzo marron",btncarrito1.value);
+    localStorage.setItem("buzo gris",btncarrito2.value);
+    localStorage.setItem("buzo rosado",btncarrito3.value);
+    localStorage.setItem("remera blanca",btncarrito4.value);
+})
+//----------------------- cantidad de claves guardadas-------------------------------------------------//
+console.log(sessionStorage.length); 
 
-const prendas = [
-    new Prenda(1, "Buzo ", "L", "marrón", 14000),
-    new Prenda(2, "Buzo", "M", "gris", 16150),
-    new Prenda(3, "Buzo", "X", "rosado", 11640)
-];
-
-console.log(prendas);
-//-------------- --para inicar el modal ---------------------------------------------------------------//
-const myModalEl = document.getElementById('myModal')
-myModalEl.addEventListener('show.bs.modal',() => {
-  
 
 
 //------------cuando el usuario desee hacer click en el boton de carrito(conectar js con html)---------//
 
-document.getElementById("carrito").addEventListener("click", hacerPregunta);
+document.getElementById("carrito1").addEventListener("click", hacerPregunta);
+document.getElementById("carrito2").addEventListener("click", hacerPregunta);
+document.getElementById("carrito3").addEventListener("click", hacerPregunta);
+document.getElementById("carrito4").addEventListener("click", hacerPregunta);
 let elegirProducto = 0;
 
 function hacerPregunta() {
@@ -61,7 +59,7 @@ if (elegirProducto === "si" || elegirProducto === "Si") {
         for (let i = 0; i < producto.length; i++) {
             producto[i].cantidad += 1;
 
-            return producto;
+            console.log(producto) ;
         }
 
     } else {
@@ -83,11 +81,7 @@ if (elegirProducto === "si" || elegirProducto === "Si") {
     }
 
 }
+localStorage.clear()
 
-
-})
-
-
-modal(hidden.bs.modal);
 
 
