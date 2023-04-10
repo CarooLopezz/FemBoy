@@ -1,0 +1,41 @@
+[
+    {
+    "nombre":"Buzo",
+    "talle":"L",
+    "color":"marron",
+    "precio":14000
+    },
+    
+    {
+    "nombre":"Buzo",
+    "talle":"M",
+    "color":"gris",
+    "precio":16150
+    },
+
+    {
+    "nombre":"Buzo",
+    "talle":"X",
+    "color":"rosado",
+    "precio":11640
+    },
+    {
+    "nombre":"Remera",
+    "talle":"X",
+    "color":"blanca",
+    "precio":7050
+    },
+    {
+    "nombre":"Pantalon",
+    "talle":"42",
+    "color":"naranja",
+    "precio":16123
+    },
+    {
+    "nombre":"Estiletos",
+    "talle":"41",
+    "color":"negro",
+    "precio":10470
+    }
+    
+]
