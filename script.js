@@ -5,6 +5,7 @@ const btnCarrito= document.getElementById('carrito');
 const btnVerCarrito= document.getElementById('verCarrito');
 const eliminarCarrito= document.getElementById('eliminarCarrito');
 const vaciarCarrito = document.getElementById('vaciarCarrito');
+const totalCarrito = document.getElementById('totalCarrito');
 const comprar= document.getElementById('comprar');
 //--------------------------realizar el boton de carrito------------------------------------------------//
 btnCarrito.addEventListener('click', function() {
@@ -38,55 +39,17 @@ btnVerCarrito.addEventListener("click", function() {
     console.log(carrito);
   });
 
-  //-----------------agregar  prenda al carrito con json
-  //agregar otra unidad
-  // ver el carrito
-  // eliminar 1 elemento
-// vaciar el carrito
-// comprar
-//eiminar la lista del carrito
-//------------------creo una función que busque el producto por id y lo añada al carrito-----------------//
-const agregarAlCarrito = (id) => {
-    const prenda = prendas.find((prenda) => prenda.id === id);
-    const prendaEnCarrito = carrito.find((prenda) => prenda.id === id);
-    if (prendaEnCarrito) {
-        prendaEnCarrito.cantidad++;
-    } else {
-        carrito.push(prenda);
-    }
-    actualizarCarrito();
-};
-//-------------------muestro el carrito de compras modificando el DOM------------------------------------//
+//------------------eliminar 1 elemento del carrito--------------------------------------------------//
+eliminarCarrito = (id) => {
+    const producto = carrito.find((producto) => producto.id === id);
+    carrito.splice(carrito.indexOf(producto), 1);
+    eliminarCarrito();
+  };
 
-const contenedorCarrito = document.getElementById('contenedorCarrito');
 
-verCarrito.addEventListener('click', actualizarCarrito);
 
-function actualizarCarrito() {
-let aux = '';
-carrito.forEach((prenda) => {
-    aux += `
-            <div class="card col-xl-3 col-md-6 col-sm-12">
-                <img src="img/${prenda.id}.jpg" class="card-img-top img-fluid py-3">
-                <div class="card-body">
-                    <h3 class="card-title"> ${prenda.nombre} </h3>
-                    <p class="card-text"> ${prenda.precio} </p>
-                    <button onClick = "eliminarDelCarrito(${prenda.id})" class="btn btn-primary"> Eliminar del Carrito </button>
-                </div>
-            </div>
-            `;
-});
 
-contenedorCarrito.innerHTML = aux;
-calcularTotalCompra();
-}
-//----------------------------agrego una función que elimine el producto del carrito----------------------//
 
-const eliminarDelCarrito = (id) => {
-    const prenda = carrito.find((prenda) => prenda.id === id);
-    carrito.splice(carrito.indexOf(prenda), 1);
-    actualizarCarrito();
-};
  //--------------------------creo una función para vaciar todo el carrito por completo---------------------//
 
 vaciarCarrito.addEventListener('click', () => {
@@ -94,33 +57,27 @@ carrito.splice(0, carrito.length);
 actualizarCarrito();
 });
 
-//----------------------------creo una función que me calcule el total del carrito------------------------//
-
-const totalCompra = document.getElementById('totalCompra');
-
-const calcularTotalCompra = () => {
-let total = 0;
-carrito.forEach((prenda) => {
-    total += prenda.precio * prenda.cantidad;
-});
-totalCompra.innerHTML = total;
-};
-
-
-//---------------------------Una vez apretado el boton finalizar la compra---------------------------------//
 //---------------------------guardar en el localstorage el DOM-------------------------------------------//
 carrito.addEventListener('click',()=>{
-    localStorage.setItem(prenda1.value);
-    localStorage.setItem(prenda2.value);
-    localStorage.setItem(prenda3.value);
-    localStorage.setItem(prenda4.value);
+    localStorage.setItem(producto.value);
+    localStorage.setItem(producto.value);
+    localStorage.setItem(producto.value);
+    localStorage.setItem(producto.value);
 })
 //----------------------- cantidad de claves guardadas-------------------------------------------------//
 console.log(carrito.length); 
 
 const usarJson = async function () {
     let response = await fetch('./js/data.json');
-    let productos = await response.json();
-    console.log(prendas);
-    crearTarjeta(prendas);
+    let producto = await response.json();
+    console.log(producto);
+
 }
+//------------------------mostrar que realizo la compra con un tostify---------------------------------//
+function comprar() {
+    // Creo un mensaje de éxito
+    toastr.success('Compra exitosa!');
+  }
+  const botonComprar = document.getElementById('boton-comprar');
+  botonComprar.addEventListener('click', comprar);
+  
