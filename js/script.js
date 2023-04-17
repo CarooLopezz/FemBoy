@@ -1,77 +1,89 @@
 
+//----------------------- traer del DOM-----------------------------------------------------------------/
+const $btnAgregar = document.getElementById("agregar");
+const $btnVerCarrito = document.querySelector("#verCarrito");
+const $btnEliminarCarrito = document.getElementById('eliminarCarrito');
+const $btnComprar = document.getElementById("comprar");
+let carritoItems=[];
 
-const btnAgregar = document.getElementById('agregar');
-const btnCarrito= document.getElementById('carrito');
-const btnVerCarrito= document.getElementById('verCarrito');
-const btnEliminarCarrito= document.getElementById('eliminarCarrito');
-const btnVaciarCarrito = document.getElementById('vaciarCarrito');
-const btnTotalCarrito = document.getElementById('totalCarrito');
-//--------------------------realizar el boton de carrito------------------------------------------------//
-btnCarrito.addEventListener('click', function() {
-    // Hacer una petición al archivo JSON utilizando fetch
-    fetch('datos.json')
-      .then(response => response.json())
-      .then(data => {
-        // Manipular la data de alguna manera
-        console.log(data);
-      })
-      .catch(error => {
-        console.log('Error al cargar la data:', error);
+// traigo  los productos JSON y los relaciono con el carrito
+fetch('data.json')
+  .then(response => response.json())
+  .then(data => {
+     // Agregar los productos al carrito
+     data.forEach(prenda => {
+        const prendaElement = document.createElement('div');
+        prendaElement.innerHTML = `
+        <img src="${prenda.imagen}" class="img-fluid w-40 h-80 " alt="${prenda.apodo}">
+          <p>${prenda.nombre} - $${prenda.precio}</p>
+          <p>${prenda.talle}<p>
+          <button data-id="${prenda.id}">Agregar al carrito</button>
+        `;
+        const btnCarrito = prendaElement.querySelector('button');
+        btnCarrito.addEventListener('click', () => {
+          addToCart(prenda);
+        });
+        carrito.appendChild(prendaElement);
       });
-  });
-
-//--------------------------Agregar un evento al boton de agregar uno mas-------------------------------//
-let contadorProductos = 3;
-
-btnAgregar.addEventListener("click", function() {
-  contadorProductos++;
-  const nuevoProducto = "";
-  nuevoProducto.innerText = "Producto " + contadorProductos;
-  btnAgregar.appendChild(nuevoProducto);
-});
-//---------------------- agregar evento al boton ver carrito------------------------------------------//
-btnVerCarrito.addEventListener("click", function() {
-    // Obtener los elementos del carrito
-    const carrito = JSON.parse(localStorage.getItem("carrito"));
+    });
   
-    // Mostrar los elementos del carrito en la consola
-    console.log(carrito);
-  });
-
-//------------------eliminar 1 elemento del carrito--------------------------------------------------//
-btnEliminarCarrito = (id) => {
-    const producto = carrito.find((producto) => producto.id === id);
-    carrito.splice(carrito.indexOf(producto), 1);
-    btnEliminarCarrito();
-  };
- //--------------------------creo una función para vaciar todo el carrito por completo---------------------//
-
-btnVaciarCarrito.addEventListener('click', () => {
-carrito.splice(0, carrito.length);
-actualizarCarrito();
-});
-
-//---------------------------guardar en el localstorage el DOM-------------------------------------------//
-carrito.addEventListener('click',()=>{
-    localStorage.setItem(producto.value);
-    localStorage.setItem(producto.value);
-    localStorage.setItem(producto.value);
-    localStorage.setItem(producto.value);
-})
-//----------------------- cantidad de claves guardadas-------------------------------------------------//
-console.log(carrito.length); 
-
-const usarJson = async function () {
-    let response = await fetch('./js/data.json');
-    let producto = await response.json();
-    console.log(producto);
-
-}
-//------------------------mostrar que realizo la compra con un tostify---------------------------------//
-function comprar() {
-    // Creo un mensaje de éxito
-    toastr.success('Compra exitosa!');
+  // Función para agregar un producto al carrito
+  function addToCart(prenda) {
+    const carritoItems = document.createElement('div');
+    carritoItems.innerHTML = `
+      <p>${prenda.nombre} - ${prenda.precio}</p>
+    `;
+    carrito.appendChild(carritoItems);
   }
-  const botonComprar = document.getElementById('boton-comprar');
-  botonComprar.addEventListener('click', comprar);
+  //funcion para quitar un producto
+
+    function removeFromCarrito(prendaId) {
+        carritoItems = carritoItems.filter(item => item.id !== prendaId);
+        renderCarritoItems();
+      }
+
+      function clearCarrito() {
+        carritoItems = [];
+        renderCarritoItems();
+      }
+
+      function renderCarritoItems() {
+        carrito.innerHTML = '';
+        if (carritoItems.length === 0) {
+          carrito.innerHTML = '<p>Carrito vacío</p>';
+        } else {
+          carritoItems.forEach(prenda => {
+            const carritoItems = document.createElement('div');
+            carrito.innerHTML = `
+              <p>${prenda.nombre} - $${prenda.precio}</p>
+              <button data-id="${prenda.id}">Eliminar un producto</button>
+            `;
+            const removeButton = document.getElementById('eliminarCarrito');
+            removeButton.addEventListener('click', () => {
+              removeFromCarrito(prenda.id);
+            });
+            carrito.appendChild(carritoItems);
+          });
+        }
+      }
+     
+      $btnEliminarCarrito.addEventListener('click', () => {
+        clearCarrito();
+      });
+   
+      // agregar al boton comprar un mensaje
+      function showConfirmationMessage(prenda) {
+        const message = `${prenda.nombre} se ha realizado la compra con exito.`;
+        toastr.success(message);
+      }
+      $btnComprar.addEventListener("click",()=> {
+        showConfirmationMessage();
+      })
+
+  
+
+ 
+       
+  
+  
   
