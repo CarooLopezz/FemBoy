@@ -36,90 +36,55 @@ fetch('data.json')
     `;
     carrito.appendChild(carritoItems);
   }
-  
-// Cargar los datos del archivo JSON
-async function loadJSON() {
-  const response = await fetch('data.json');
-  const data = await response.json();
-  return data;
-}
-
-// Función para generar la lista de productos
-async function renderProducts() {
-  const data = await loadJSON();
-  data.productos.forEach((prenda) => {
-    const li = document.createElement('li');
-    li.textContent = prenda.nombre;
-    prendaList.appendChild(li);
-  });
-}
-
-// Función para eliminar un producto
-async function deleteProduct() {
-  const prendaName = document.getElementById("eliminarCarrito");
-  const data = await loadJSON();
-  const prendaIndex = data.prendas.findIndex((prenda) => prenda.nombre === prendaName);
-  if (prendaIndex !== -1) {
-    data.prendas.splice(prendaIndex, 1);
-    const response = await fetch('data.json', {
-      method: 'PUT',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    console.log(`El producto ${prenda.nombre} fue eliminado.`);
-    renderProducts();
-  } else {
-    console.log(`No se encontró el producto ${prenda.nombre}.`);
+  //------------------función para eliminar ultimo producto-----------//
+  function eliminarUltimoProducto() {
+    carrito.pop();
+    renderizarCarrito();
   }
+  
+document.getElementById("vaciarCarrito").addEventListener("click", () => {
+  eliminarUltimoProducto();
+});
+
+//----------------- Función para vaciar un producto-------------------//
+function vaciarCarrito() {
+  carrito = [];
+  renderizarCarrito();
 }
+
+function renderizarCarrito() {
+  const carritoElement = document.getElementById('vaciarCarrito');
+  if (carrito.length === 0) {
+    carritoElement.innerHTML = '<p>El carrito está vacío</p>';}
+ else {
+    splice.data(6)
+  }};
+    
+    
+  
+  
+  
+
 
 // Asignar evento de clic al botón de eliminar
-$btnEliminarCarrito.addEventListener('click', deleteProduct);
+$btnVaciarCarrito.addEventListener('click', vaciarCarrito);
 
-// Generar la lista de productos al cargar la página
-renderProducts();
-//funcion para vaciar el producto
 
-function removeFromCarrito(prendaId) {
-  carritoItems = carritoItems.find(item => item.id == prendaId);
-  renderCarritoItems();
 
-}
 
-function clearCarrito() {
-  carritoItems = [];
-  renderCarritoItems();
-}
-
-function renderCarritoItems() {
-carrito.innerHTML = '';
-carritoItems.length === 0 {
-carrito.innerHTML = '<p>Carrito vacío</p>';
-  
-const removeButton = document.getElementById('eliminarCarrito');
-removeButton.addEventListener('click', () => {
-removeFromCarrito(prenda.id);
+// Asignar evento de clic al botón de comprar
+$btnComprar.addEventListener('click', () => {
+  Toastify({
+    text: "Tu compra es exitosa",
+    duration: 3000,
+    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+    close: true,
+    gravity: "top",
+    position: "right",
+    stopOnFocus: true,
+  }).showToast();
 });
-carrito.appendChild(carritoItems);
-};
-}
 
-$btnVaciarCarrito.addEventListener('click', () => {
-clearCarrito();
-});
-   
-// agregar al boton comprar un mensaje
-function showConfirmationMessage(prenda) {
-        const message = `${prenda.nombre} se ha realizado la compra con exito.`;
-        toastr.success(message);
-}
-$btnComprar.addEventListener("click",()=> {
-        showConfirmationMessage();
-})
-
-  
 
  
        
