@@ -1,10 +1,9 @@
-[
-    {
+ [{
     "id": 1,
     "nombre":"Buzo marron",
     "talle":"L",
     "precio":14000,
-    "imagen":"../assets/img/img1.jpg",
+    "imagen":"./assets/img/img1.jpg",
     "apodo":"Chica morocha con buzado marrón y pantalón jean celeste."
     },
     
@@ -13,7 +12,7 @@
     "nombre":"Buzo gris",
     "talle":"M",
     "precio":16150,
-    "imagen":"../assets/img/img2.jpg",
+    "imagen":"./assets/img/img2.jpg",
     "apodo":"Chico morocho con buzo gris y pantalón neegro."
     },
 
@@ -22,7 +21,7 @@
     "nombre":"Buzo rosado",
     "talle":"X",
     "precio":11640,
-    "imagen":"../assets/img/img3.jpg",
+    "imagen":"./assets/img/img3.jpg",
     "apodo":"Chica morocha con buzo rosado y pantalon blanco."
     },
 
@@ -31,7 +30,7 @@
     "nombre":"Remera blanca",
     "talle":"X",
     "precio":7050,
-    "imagen":"../assets/img/img4.jpg",
+    "imagen":"./assets/img/img4.jpg",
     "apodo":"Chico morocho con remera blanco y jeans azul."
     },
 
@@ -40,7 +39,7 @@
     "nombre":"Pantalon naranja",
     "talle":"42",
     "precio":16123,
-    "imagen":"../assets/img/img5.jpg",
+    "imagen":"./assets/img/img5.jpg",
     "apodo":"Conjunto naranja deportivo."
     },
 
@@ -49,7 +48,7 @@
     "nombre":"Estiletos negros",
     "talle":"41",
     "precio":10470,
-    "imagen":"../assets/img/img6.jpg",
+    "imagen":"./assets/img/img6.jpg",
     "apodo":"Chica con bandana azul, pantalón blanca con estiletos negros."
     }
     

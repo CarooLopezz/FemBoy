@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FemBoy</title>
+    <meta name="description" content="Conocé ropa a tu estilo y gusto , viste con comodidad y confianza!">
+    <meta name="keywords" content="femboy, ropa, genero, persona, estilo, comodidad diversidad">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">  
+    <link rel="stylesheet" href="../assets/css/styles.css" class="styles.css">
+    <script  defer src="../js/script.js" type="module"></script>
+
+
+
+    <style>
+        form {
+    width:300px; 
+    margin:auto; 
+    background-color:#f9f9f9; 
+    padding-left:20px; 
+    padding-right:20px; 
+    padding-top:20px; 
+    padding-bottom:20px; 
+    border-radius:10px; 
+    box-shadow:-5px -5px rgba(0,0,0,.1), inset -5px -5px rgba(0,0,0,.1), inset -5px -5px rgba(255,255,255,.3), inset -5px -5px rgba(255,255,255,.3);
+}
+
+input[type=text], input[type=email], input[type=tel], textarea {
+    width:250px; 
+    height:auto; 
+    margin-bottom:10px; 
+    padding-left:10px; 
+    padding-right:10px; 
+    padding-top:10px; 
+    padding-bottom:10px; 
+    border-radius:5px; 
+    border:none; 
+    outline:none; 
+    background-color:#f9f9f9; 
+    box-shadow:-2.5px -2.5px rgba(0,0,0,.1), inset -2.5px -2.5px rgba(0,0,0,.1), inset -2.5px -2.5px rgba(255,255,255,.3), inset -2.5px -2.5px rgba(255,255,255,.3);
+}
+
+input[type=submit] {
+    width:auto; 
+    height:auto; 
+    margin-top:-15%; 
+    margin-left:-15%; 
+    margin-right:-15%; 
+    margin-bottom:-15%; 
+    padding-left:auto; 
+    padding-right:auto; 
+    padding-top:auto; 
+    padding-bottom:auto; 
+    border-radius:auto;  
+    border:none;  
+    outline:none;  
+    background-color:#f9f9f9;  
+    box-shadow:-2.5px -2.5px rgba(0,0,0,.1), inset -2.5px -2.5px rgba(0,0,0,.1), inset -2.5px -2.5px rgba(255,255,255,.3), inset -2.5px -2.5px rgba(255,255,255,.3);  
+}
+
+input[type=submit]:hover {background-color:#4CAF50;}
+
+label {font-family:'Arial'; font-size:.8em;}
+    </style>
+    </head>
+    <body class="fondo"></body>
+    <header>
+ <!--    <div class="col-12 d-none d-md-block text-center col-md-6 col-lg-12 " style="background-color:#401D10; margin-top:-10px;height: 57px;">
+        <a class="custom-logo-link" rel="home" aria-current="page"><img width="240" height="48" src="./img/Agregar un título.png" class="custom-logo" alt="SAN REMO MUEBLES" decoding="async"></a>
+        <ul>
+        <li class="nav-item  nav-main-item " data-component="menu.item" >
+        <div class="nav-item-container ">
+        <a class=" nav-list-link " href=""style="pointer-events: none;">PRODUCTOS
+                <span class="nav-list-arrow transition-soft">
+        <i class="bi bi-chevron-down flecha"></i> </span></a>
+        </div>
+        </li >
+        <div class="nav-dropdown-content">
+                <ul class="desktop-list-subitems list-subitems nav-list-accordion">
+                <li class="nav-item nav-item-desktop " data-component="menu.item">
+                <a class="nav-list-link " >COCINA </a>
+                </li>
+                <li class="nav-item nav-item-desktop " data-component="menu.item">
+                <a class="nav-list-link " >LIVING</a>
+                </li>
+                <li class="nav-item nav-item-desktop " data-component="menu.item">
+                <a class="nav-list-link " >DORMITORIO</a>
+                </li>
+                </ul>
+                </div>
+      
+
+       </li>
+        
+       
+        <li class="nav-item  nav-main-item " data-component="menu.item" style="position: absolute;margin-top: -140px;margin-left: 125px;">
+        <div class="nav-item-container ">
+        <a class=" nav-list-link " href="" style="pointer-events: none;">TE AYUDAMOS?<span class="nav-list-arrow transition-soft"></span></a>
+        </div>
+        </li>
+       
+       
+        <li class="nav-item nav-item-desktop nav-main-item" data-component="menu.item" style="position: absolute;margin-top: -140px;margin-left: -255px;">
+        <div class="nav-item-container ">
+        <a class="nav-list-link " href="#seccion-1" style="pointer-events: none;" >CONOCENOS<span class="nav-list-arrow transition-soft"></span></a>
+        </div>
+        </li>
+
+        </ul>
+   
+
+</div> -->
+</head>
+<body class="fondo">
+<div id="app"></div>
+
+<div >
+<img class="contenedor" >
+<h1 class="titulo_inicio">Fem</h1>
+<h1 class="titulo_inicio1">Boy</h1>
+</div>
+<div>
+  <a href="https://www.whatsapp.com/?lang=es_LA" target="_blank">
+    <img  class="wpp1" src="../assets/img/wpp.png" alt="WhatsApp" width="250" height="130" margin-left="-96px ">
+  </a>
+  
+</div>
+<div style="position: sticky;">
+<nav class="nav nav-pills flex-column flex-sm-row" >
+    <a class="textnav flex-sm-fill text-sm-center nav-link" href="../index.html">INICIO</a>
+    <a class="textnav flex-sm-fill text-sm-center nav-link" href="../pages/tienda/tienda.html">TIENDA</a>
+    <a class="textnav flex-sm-fill text-sm-center nav-link" href="../pages/blog.html">BLOG</a>
+    <a class="textnav flex-sm-fill text-sm-center nav-link" href="../pages/contacto.html">CONTACTO</a>
+    <a class="flex-sm-fill text-sm-center nav-link" href="../pages/ayuda.html">AYUDA</a>
+</nav>
+</div>
+
+<main>
+    <form style="margin-top:90px; width: 889px; border: 4px solid  yellowgreen;">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label" >Nombre</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width: 838px;">
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width: 838px;">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Teléfono</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width: 838px;">
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Acepto términos y condiciones</label>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+        
+        <div class="g-recaptcha"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" width="304" height="78" role="presentation" name="a-44omhtaemfc3" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LdvubwUAAAAAKg5583RDx5WbiQg-J3lUa_INUHR&amp;co=aHR0cHM6Ly93d3cuc29tb3NpbnRlZ3JhLmNvbS5hcjo0NDM.&amp;hl=es&amp;v=pxZcVU8Dk73FyvFvdCgp2MSG&amp;size=normal&amp;cb=65ztbt7wnnor"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div><button class="btn btn-primary btn-block" type="submit" value="Enviar" name="contact" disabled="">
+    Enviar
+</form>
+</main>
+
+
+</main>
+<div class="container "  >
+<div class="row">
+
+<section style="margin-top:547px; background-color: rgba(10, 60, 94, 0.8); color:white" >
+<div class="title " style="margin-left:458px ;">CONTACTOS</div>
+<div class="contacts">
+
+<span class="element element_address element_first ">
+<span class="element_pref">Dirección</span>
+<span class="element_data">
+Gral. San Martín 1260<br>  Mendoza<br> Argentina			</span>
+</span>
+
+<span class="element element_phone  ">
+<span class="element_pref">Tel</span>
+<span class="element_data">
+(+59) 215856698		</span>
+</span>
+
+
+<span class="element element_mail element_last ">
+<span class="element_pref">E-mail</span>
+<span class="element_data">
+  femboy@gmail.com
+</span>
+
+</div>
+</section>
+
+<section  style="background-color:gray;color:white; display: flex;flex-direction:row;" >
+
+<div class="title">
+Femboy tienda de moda </div>
+la mejor ropa de Mendoza<br><a href="http://www.femboy.com.ar" target="_blank">www.femboy.com.ar</a>
+
+<div class="social inverse">
+
+</div>
+</section>
+
+</div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+</script>
+<script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="data.json"></script>
+</body>
+</html>
+<!-- #imagen-cambiante {
+min-height: 290px;
+min-width: 290px;
+background: url(http://programandoointentandolo.com/ejemplos/imagenes/cubo/img1.png) no-repeat;
+}
+
+#imagen-cambiante:hover {
+background: url(http://programandoointentandolo.com/ejemplos/imagenes/cubo/img6.png) no-repeat;
+} cambie una imagen por otro -->
+
+
+</footer>
+</body>
+</html>

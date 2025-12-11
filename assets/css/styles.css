@@ -1,3 +1,5 @@
+/*INICIO*/
+
 /*Reset*/
 * {
     padding: 0px;
@@ -7,16 +9,42 @@
   
   /*Inicio*/
   .fondo {
-    background-color: #de3c4b;
+    /* background-color: #de3c4b; *//* 
+    background-color: rgba(3, 32, 51, .8); */
+    background-image:url( "../img/color.jpg") ;
   }
-  
+  .carousel-item{
+    position:relative;
+    display: inline-block;
+  }
+  h3{
+    position:absolute;
+    top:10px;
+    left:10%;
+    font-size:52px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
   .contenedor {
     position: relative;
-    display: inline-block;
-    height: 478px;
-    width: 1300px;
-  }
+    display: flex;
+    margin-top: 147px;
+    
+  /*   background:url( "../img/jeans-with-sale-label-copy-space.jpg") */ ;
+ 
   
+  }
+  .contenedor:hover{
+    /* background: url(../img/tienda-ropa-borrosa-centro-comercial.jpg); */
+    
+  }
+  .wpp1{
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+    }
+   
+ 
   .titulo_inicio {
     position: absolute;
     font-size: 98px;
@@ -30,13 +58,16 @@
   .titulo_inicio1 {
     position: absolute;
     left: 650px;
-    top: 115px;
+    top: 10px;
     font-size: 98px;
     font-family: serif;
-    top: 10px;
-    color: black;
+    color: white;
     display: inline;
   }
+  .carousel-item:nth-child(2) {
+    transition-delay: 5s;
+  }
+  
   
   .nav {
     display: inline-block;
@@ -88,8 +119,183 @@
     text-decoration: none;
     border-radius: 5px;
   }
-  .tarjetas{
-    width: 220px;
+
+
+.boton_{
+  border-color: yellow;
+  margin-left:45px ;
+}
+.blink {
+  animation: blink-animation 1s infinite;
+}
+
+@keyframes blink-animation {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.talle_{
+  margin-left: 25px;
+  color:blue;
+}
+.nombre_{
+  border-color:violet;
+  border-width: 158px;
+}
+.tarjetas{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  background-image:url(../img/azul2.jpg);
+  height: 398px;
+  width: 1250px;
+  margin-left: 46px;
+  margin-top:105px;
+}
+
+.image_{
+ 
+  padding: 0%;
+  width: 255px;
+  height: 298px;
+}
+.card{
+  margin:20px;
+  width:250px;
+  height:350px;
+  border-radius:5px;
+  background: var(--1);
+  background-size:cover;
+  box-shadow: 3px 5px 5p rgba(3, 32, 51, .8);
+  overflow: hidden;
+}
+.content{
+  width:100%;
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  background: rgba(0, 0, 0, .4);
+  opacity:0;
+  transition: .5s;
+}
+.content h2 h4 {
+  color:rgba(246, 232, 232, 0.8);
+  margin: 10px 0;
+}
+.card:hover .content{
+  opacity:1;
+}
+.mapa {
+  margin-top:47px;
+  margin-left:55px;
+  height: 400px;
+  width: 1000px;
+}
+@media (max-width: 576px) {
+  .mapa {
+    position: absolute;
+    top: 355px;
+    left: -360px;
     height: 300px;
-    
+    width: 320px;
+  }
+}
+
+/* TIENDA */
+#carro{
+  
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    background-color: #3FF227;
+    color: #FFFFFF;
+    border-radius: 30%;
+    font-size: 20px;
+    text-align: center;
+  
+  }
+.img{
+  width: 357px;
+  height: 400px;
+}
+.tarj_img {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+#imagen-zoom {
+  width: 300px;
+  transition: transform 0.3s;
+}
+
+#imagen-zoom:hover {
+  transform: scale(1.1);
+}
+.precio{
+  color:yellow;
+}
+.pegado{
+  margin-left:95px;
+}
+
+.fon{
+  background-color: #db7093	;
+
+}
+.titulo_moda{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; }
+  
+.palabra_moda{
+    margin-left: 15px;
+    font-style: italic;
+    border: 2px solid yellow;
+}
+
+.titulogeneral_moda{
+  position: absolute;
+  margin-left:528px;
+  margin-top:67px;
+}
+
+.contenedor_article{
+  border: 2px solid violet;
+  border-radius: 4px;
+}
+/* blog sin genero */
+.emoji{
+  height: 14px;
+  width: 14px;
+}
+.texto_largo{
+  white-space: pre-wrap;
+}
+.cuadrado{
+  margin-left: 265px;
+  width: 850px;
+  height: 500px;
+  border: 1px solid black;
+  overflow: auto;
+  background-color: #de3c4b;
+}
+.articulo_1{
+  position: relative;
+  width: 300px; 
+  height: 200px;
+}
+.articulo_1 img {
+  width: 110%;
+  height: 150%;
+  transition: transform 0.3s ease;
+  }
+  
+  .articulo_1:hover img {
+  transform: scale(1.1);
   }

@@ -8,49 +8,155 @@
     <meta name="description" content="Conocé ropa a tu estilo y gusto , viste con comodidad y confianza!">
     <meta name="keywords" content="femboy, ropa, genero, persona, estilo, comodidad diversidad">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">  
     <link rel="stylesheet" href="./assets/css/styles.css" class="styles.css">
-    <script  defer src="./js/script.js"></script>
+    <script  defer src="./js/script.js" type="module"></script>
+
 </head>
+
 <body class="fondo">
+  <div id="app"></div>
+
     <div >
-    <img class="contenedor" src="./assets/img/jeans-with-sale-label-copy-space.jpg" >
+    <img class="contenedor" >
     <h1 class="titulo_inicio">Fem</h1>
     <h1 class="titulo_inicio1">Boy</h1>
     </div>
-    <header>
-    <nav class="nav nav-pills flex-column flex-sm-row">
+    <div>
+      <a href="https://www.whatsapp.com/?lang=es_LA" target="_blank">
+        <img  class="wpp1" src="./assets/img/wpp.png" alt="WhatsApp" width="250" height="130" margin-left="-96px ">
+      </a>
+      
+    </div>
+    <div style="position: sticky;">
+    <nav class="nav nav-pills flex-column flex-sm-row" >
         <a class="textnav flex-sm-fill text-sm-center nav-link" href="index.html">INICIO</a>
-        <a class="textnav flex-sm-fill text-sm-center nav-link" href="./pages/tienda.html">TIENDA</a>
-        <a class="textnav flex-sm-fill text-sm-center nav-link" href="./pages/us.html">US</a>
+        <a class="textnav flex-sm-fill text-sm-center nav-link" href="./pages/tienda/tienda.html">TIENDA</a>
+        <a class="textnav flex-sm-fill text-sm-center nav-link" href="./pages/blog.html">BLOG</a>
         <a class="textnav flex-sm-fill text-sm-center nav-link" href="./pages/contacto.html">CONTACTO</a>
         <a class="flex-sm-fill text-sm-center nav-link" href="./pages/ayuda.html">AYUDA</a>
     </nav>
-    </header>
+  </div>
+
+<div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner" style="margin-left:47px;width:1250px; height:400px;">
+      <div class="carousel-item active">
+        <img src="./assets/img/REMERAS.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <a href="pages/promocion_pag1.html">
+          <img src="./assets/img/BUZOS.png" class="d-block w-100" alt="...">
+      </a>
+      
+      </div>
+</div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+   
     <main>
         <div class="row" id="contenedorPrendas"></div>
 
-        <h2 class=" justify center">OFERTAS IMPERDIBLES! </h2>
         <div id="contenedor"></div>
         
         <div id="carrito"></div>
-        
-    
-        
-    </section>
-        <h2>Carrito de Compras:</h2>
-        <button class="btn btn-primary" id="eliminarCarrito">Eliminar un producto</button>
-        <button class="btn btn-primary" id="vaciarCarrito">Vaciar Carrito</button>
-        <button class="btn btn-primary" id="comprar">Comprar</button>
-        
-       
-    </main>
 
+        <div class="tarjetas" style="justify-content: space-around;">
+
+          <div class="card" style="background-image: url('./assets/img/img1.jpg');">
+            <div class="content">
+              <h2 class="nombre_" style="color: white;"> Buzo Marrón <h2>
+              <h4 id="number" style="color: white;" class="blink">14000 </h4> 
+            </div>
+          </div>
+            <div  class="card" style="background-image: url('./assets/img/img2.jpg');">
+              <div class="content">
+            <h2 class="nombre_"> Buzo Gris  <h2>
+            <h4 id="number" class="blink">16150  </h4> 
+            </div>
+          </div>
+          <div>
+            <div  class="card" style="background-image: url('./assets/img/img3.jpg');">
+              <div class="content">
+            <h2 class="nombre_" style="color: blue;"> Buzo Rosado  <h2>
+            <h4 id="number" style="color: blue;" class="blink">11640  </h4> 
+            </div>
+          </div>
+          
+          <div style="background: rgba(38, 146, 163, 0.55); width: 1090px; height:470px; margin-left:-825px; margin-top:58px;">
+          
+            <iframe  class=" mapa" src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3350.2776559521394!2d-68.84315058511015!3d-32.89082647639407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x967e091ed63abdcf%3A0xca5b603891bd1361!2s%C3%93ptica%20Cristal%20Lent%2C%209%20de%20Julio%201062%2C%20M5500%20Mendoza!3m2!1d-32.8908279!2d-68.84097919999999!5e0!3m2!1ses!2sar!4v1669583930958!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+         
+    
+       
+        
+    </main>
+    <div class="container "  >
+      <div class="row">
+    
+    <section style="margin-top:547px; background-color: rgba(10, 60, 94, 0.8); color:white" >
+    <div class="title " style="margin-left:458px ;">CONTACTOS</div>
+    <div class="contacts">
+    
+        <span class="element element_address element_first ">
+        <span class="element_pref">Dirección</span>
+        <span class="element_data">
+          Gral. San Martín 1260<br>  Mendoza<br> Argentina			</span>
+      </span>
+    
+        <span class="element element_phone  ">
+        <span class="element_pref">Tel</span>
+        <span class="element_data">
+          (+59) 215856698		</span>
+      </span>
+    
+    
+        <span class="element element_mail element_last ">
+        <span class="element_pref">E-mail</span>
+        <span class="element_data">
+            femboy@gmail.com
+      </span>
+    
+    </div>
+        </section>
+    
+        <section  style="background-color:gray;color:white; display: flex;flex-direction:row;" >
+    
+          <div class="title">
+    Femboy tienda de moda </div>
+    la mejor ropa de Mendoza<br><a href="http://www.femboy.com.ar" target="_blank">www.femboy.com.ar</a>
+    
+    <div class="social inverse">
+    
+    </div>
+        </section>
+    
+      </div>
+    </div>
+    
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
     <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
+    <script src="data.json"></script>
 </body>
 </html>
+<!-- #imagen-cambiante {
+    min-height: 290px;
+    min-width: 290px;
+    background: url(http://programandoointentandolo.com/ejemplos/imagenes/cubo/img1.png) no-repeat;
+}
+
+#imagen-cambiante:hover {
+    background: url(http://programandoointentandolo.com/ejemplos/imagenes/cubo/img6.png) no-repeat;
+} cambie una imagen por otro -->
+
